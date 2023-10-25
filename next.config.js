@@ -4,6 +4,7 @@ const withSvgr = require('next-plugin-svgr');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  fileLoader: true,
   experimental: {
     serverActions: true
   }
