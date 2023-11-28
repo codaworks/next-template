@@ -12,7 +12,6 @@
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
     "next": "^14.0.0",
-    "next-plugin-svgr": "^1.1.8",
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.32.6"
@@ -22,7 +21,9 @@
     "eslint": "^8",
     "eslint-config-next": "13.5.5",
     "eslint-plugin-tailwindcss": "^3.13.0",
+    "next-plugin-svgr": "^1.1.10",
     "postcss": "^8",
+    "postcss-import": "^15.1.0",
     "tailwindcss": "^3"
   }
 }
