@@ -1,4 +1,16 @@
-@import url("./reset.css");
-@import url("./base.css");
-@import url("./components.css");
-@import url("./utilities.css");
+@import url(./reset.css) layer(reset);
+@import url(./base.css) layer(base);
+@import url(./components/index.css) layer(components);
+@import url(./utilities.css) layer(utilities);
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-components {
+  @tailwind components;
+}
+
+@layer tailwind-utilities {
+  @tailwind utilities;
+}
