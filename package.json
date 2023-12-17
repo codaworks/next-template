@@ -1,29 +1,37 @@
 {
-  "name": "next-template",
+  "name": "prisma-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "sync-db": "npx dotenv -e .env.local -- prisma db push",
+    "generate": "npx dotenv -e .env.local -- prisma generate",
+    "postinstall": "npm run generate",
+    "migrate": "npx dotenv -e .env.local -- prisma migrate dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.4.2",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
     "next": "^14.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "sass": "^1.69.4",
     "sharp": "^0.32.6"
   },
   "devDependencies": {
     "autoprefixer": "^10",
+    "dotenv-cli": "^7.3.0",
     "eslint": "^8",
     "eslint-config-next": "13.5.5",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "next-plugin-svgr": "^1.1.10",
     "postcss": "^8",
     "postcss-import": "^15.1.0",
+    "prisma": "^5.7.0",
     "tailwindcss": "^3"
   }
 }
