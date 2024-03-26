@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "sync-db": "npx dotenv -e .env.local -- prisma db push",
-    "generate": "npx dotenv -e .env.local -- prisma generate",
-    "postinstall": "npm run generate",
-    "migrate": "npx dotenv -e .env.local -- prisma migrate dev",
+    "db-push": "npx dotenv -e .env.local -- drizzle-kit push:pg",
+    "db-pull": "npx dotenv -e .env.local -- drizzle-kit introspect:pg",
+    "db-generate": "npx dotenv -e .env.local -- drizzle-kit generate:pg",
+    "studio": "npx dotenv -e .env.local -- drizzle-kit studio",
+    "postinstall": "npm run db-generate",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -15,9 +16,11 @@
   "dependencies": {
     "@prisma/client": "^5.4.2",
     "clsx": "^2.0.0",
+    "drizzle-orm": "^0.30.4",
     "framer-motion": "^10.16.4",
     "iron-session": "^8.0.1",
     "next": "^14.0.0",
+    "pg": "^8.11.3",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.69.4",
@@ -26,6 +29,7 @@
   "devDependencies": {
     "autoprefixer": "^10",
     "dotenv-cli": "^7.3.0",
+    "drizzle-kit": "^0.20.14",
     "eslint": "^8",
     "eslint-config-next": "13.5.5",
     "eslint-plugin-tailwindcss": "^3.13.0",
