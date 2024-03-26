@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     // Chrome extensions mess with classnames and attributes, disable warnings
-    return <html lang="en" suppressHydrationWarning>
+    return <html lang='en' translate='no' suppressHydrationWarning>
         <body className={inter.className} suppressHydrationWarning>
             {children}
         </body>
