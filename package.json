@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "sync-db": "npx dotenv -e .env.local -- prisma db push",
-    "generate": "npx dotenv -e .env.local -- prisma generate",
+    "migrate": "npx dotenv -e .env.local -e .env -- prisma migrate dev",
+    "generate": "npx dotenv -e .env.local -e .env -- prisma generate",
+    "db-sync": "npx dotenv -e .env.local -e .env -- prisma db push",
+    "db-studio": "npx dotenv -e .env.local -e .env -- prisma studio",
+    "pregenerate": "npx prisma-import -s src/db/**/*.prisma -o prisma/schema.prisma -f",
     "postinstall": "npm run generate",
-    "migrate": "npx dotenv -e .env.local -- prisma migrate dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -33,6 +35,7 @@
     "postcss": "^8",
     "postcss-import": "^15.1.0",
     "prisma": "^5.7.0",
+    "prisma-import": "^1.0.5",
     "tailwindcss": "^3"
   }
 }
