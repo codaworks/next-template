@@ -12,8 +12,8 @@ export const useEvent = <T, P extends unknown[]>(handler: (...params: P) => T) =
 
     return useCallback((...args: P) => {
         const fn = handlerRef.current
-        return fn(...args)
-    }, [handlerRef]);
+        return fn!(...args)
+    }, [handlerRef])
 }
 
 export const useInterval = <T extends Function>(callback: T, delay: number) => {
@@ -21,7 +21,7 @@ export const useInterval = <T extends Function>(callback: T, delay: number) => {
 
     useEffect(() => {
         function tick() {
-            savedCallback.current()
+            savedCallback.current!()
         }
         if (delay != null) {
             let id = setInterval(tick, delay)
