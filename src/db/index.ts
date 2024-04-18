@@ -1,8 +1,7 @@
 import 'server-only'
 import { PrismaClient } from '@prisma/client'
 
-/** @type {import('@prisma/client').PrismaClient} */
-const prisma = globalThis.prisma ?? new PrismaClient()
+const prisma = globalThis.prisma as PrismaClient ?? new PrismaClient()
 
 if (process.env.NODE_ENV === 'development') {
     // avoid recreation instances on hot reload

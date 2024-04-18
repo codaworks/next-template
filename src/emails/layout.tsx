@@ -1,7 +1,9 @@
 import { Font, Head, Html, Tailwind } from '@react-email/components'
+import { LayoutProps } from 'types/layouts'
 import config from '../../tailwind.config'
 
-export const EmailLayout = ({ children }) => {
+
+export const EmailLayout = ({ children }: LayoutProps) => {
     return <Html>
         <Head>
             <Font
