@@ -5,6 +5,11 @@ export const BaseTable = createBaseTable({
 
     columnTypes: (t) => ({
         ...t,
-        timestamp: (precision?: number) => t.timestamp(precision).asDate()
+        timestamp: (precision?: number) => t.timestamp(precision).asDate(),
+        defaults: () => ({
+            id: t.identity().primaryKey(),
+            created: t.timestamps().createdAt.asDate(),
+            updated: t.timestamps().updatedAt.asDate()
+        })
     })
 })
