@@ -4,7 +4,10 @@ const withSvgr = require('next-plugin-svgr')
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  fileLoader: true
+  fileLoader: true,
+  experimental: {
+    typedRoutes: true
+  }
 }
 
 module.exports = withSvgr(nextConfig)
