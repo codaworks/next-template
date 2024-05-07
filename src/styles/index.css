@@ -4,13 +4,13 @@
 @import url(./utilities.css) layer(utilities);
 
 @layer tailwind-base {
-  @tailwind base;
+    @tailwind base;
 }
 
 @layer tailwind-components {
-  @tailwind components;
+    @tailwind components;
 }
 
 @layer tailwind-utilities {
-  @tailwind utilities;
+    @tailwind utilities;
 }

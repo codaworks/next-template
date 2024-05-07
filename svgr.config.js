@@ -1,14 +1,14 @@
 module.exports = {
-  svgoConfig: {
-    plugins: [
-      {
-        name: 'preset-default',
-        params: {
-          overrides: {
-            removeViewBox: false
-          }
-        }
-      }
-    ]
-  }
+    svgoConfig: {
+        plugins: [
+            {
+                name: 'preset-default',
+                params: {
+                    overrides: {
+                        removeViewBox: false
+                    }
+                }
+            }
+        ]
+    }
 }

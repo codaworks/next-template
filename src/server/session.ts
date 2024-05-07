@@ -16,6 +16,4 @@ export const getSession = async (req: Request, res: Response) => {
     return await getIronSession<SessionData>(req, res, config)
 }
 
-export interface SessionData {
-
-}
+export interface SessionData {}
